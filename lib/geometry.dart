@@ -1,15 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_tpm_123210078/cube.dart';
 
-class GeometryPage extends StatefulWidget {
+class GeometryPage extends StatelessWidget {
   const GeometryPage({super.key});
 
   @override
-  State<GeometryPage> createState() => _GeometryPageState();
-}
-
-class _GeometryPageState extends State<GeometryPage> {
-  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Trapesium dan Kubus",
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ),
+        backgroundColor: Colors.black,
+      ),
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        color: const Color.fromARGB(255, 249, 249, 249),
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+            const SizedBox(height: 20),
+            const Text("Pilih Menu"),
+            const SizedBox(height: 6),
+            TextButton(
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => page!),
+                // );
+              },
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6),
+                ),
+              ),
+              child: const Text("Trapesium"),
+            ),
+            const SizedBox(height: 8),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CubePage(),
+                  ),
+                );
+              },
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6),
+                ),
+              ),
+              child: const Text("Kubus"),
+            ),
+            const SizedBox(height: 20)
+          ],
+        ),
+      ),
+    );
   }
 }
