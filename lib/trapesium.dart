@@ -66,9 +66,9 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
           String inputSisiMiring = sisiMiring.text;
           String inputTinggi = tinggi.text;
 
-          if (inputSisiAtas.isNotEmpty ||
-              inputSisiBawah.isNotEmpty ||
-              inputSisiMiring.isNotEmpty ||
+          if (inputSisiAtas.isNotEmpty &&
+              inputSisiBawah.isNotEmpty &&
+              inputSisiMiring.isNotEmpty &&
               inputTinggi.isNotEmpty) {
             double atas = double.parse(inputSisiAtas);
             double bawah = double.parse(inputSisiBawah);
