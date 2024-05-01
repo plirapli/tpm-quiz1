@@ -25,19 +25,22 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         color: const Color.fromARGB(255, 249, 249, 249),
-        child: ListView(scrollDirection: Axis.vertical, children: [
-          const SizedBox(height: 20),
-          Image.asset("assets/trapesium.png"),
-          const SizedBox(height: 20),
-          const Text("Masukkan panjang sisi (cm)"),
-          _inputField("Sisi atas", sisiAtas),
-          _inputField("Sisi bawah", sisiBawah),
-          _inputField("Sisi miring", sisiMiring),
-          _inputField("Tinggi", tinggi),
-          _calcButton(context),
-          _result(),
-          const SizedBox(height: 20)
-        ]),
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+            const SizedBox(height: 20),
+            Image.asset("assets/trapesium.png"),
+            const SizedBox(height: 20),
+            const Text("Masukkan panjang sisi (cm)"),
+            _inputField("Sisi atas", sisiAtas),
+            _inputField("Sisi bawah", sisiBawah),
+            _inputField("Sisi miring", sisiMiring),
+            _inputField("Tinggi", tinggi),
+            _calcButton(context),
+            _result(),
+            const SizedBox(height: 20)
+          ],
+        ),
       ),
     );
   }

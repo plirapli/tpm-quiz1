@@ -14,24 +14,17 @@ class _CounterPageState extends State<CounterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Days Counter")),
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        color: const Color.fromARGB(255, 249, 249, 249),
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            const SizedBox(height: 20),
-            const Text("Enter a number from 1-7 "),
-            const SizedBox(height: 72),
-            _inputField(),
-            _calcButton(context),
-            _result(),
-            const SizedBox(height: 20)
-          ],
-        ),
-      ),
+    return ListView(
+      scrollDirection: Axis.vertical,
+      children: [
+        const SizedBox(height: 20),
+        const Text("Enter a number from 1-7 "),
+        const SizedBox(height: 72),
+        _inputField(),
+        _calcButton(context),
+        _result(),
+        const SizedBox(height: 20)
+      ],
     );
   }
 
@@ -75,10 +68,10 @@ class _CounterPageState extends State<CounterPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Result", style: TextStyle(fontSize: 18, height: 0.75)),
+          const Text("Result"),
           Text(
             result,
-            style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
           ),
         ],
       ),

@@ -19,37 +19,38 @@ class _HomePageState extends State<HomePage> {
     ProfilePage()
   ];
 
+  static const navItem = <BottomNavigationBarItem>[
+    BottomNavigationBarItem(
+      icon: Icon(Icons.calculate),
+      label: 'Geometry',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.calendar_month),
+      label: 'Days Counters',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.person),
+      label: 'Profile',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(title: Text(navItem[_selectedIndex].label!)),
         body: Container(
-            color: const Color.fromARGB(255, 246, 246, 246),
-            child: _widgetOptions.elementAt(_selectedIndex)),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          color: const Color.fromARGB(255, 246, 246, 246),
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
         bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.calculate),
-              label: 'Geometry',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month),
-              label: 'Days Counters',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
+          items: navItem,
           currentIndex: _selectedIndex,
-          unselectedItemColor: const Color.fromARGB(255, 169, 169, 169),
+          unselectedItemColor: Colors.black26,
           selectedFontSize: 12.0,
           selectedItemColor: Colors.black,
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
+          onTap: (index) => setState(() => _selectedIndex = index),
         ),
       ),
     );

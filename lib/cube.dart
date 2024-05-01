@@ -21,15 +21,18 @@ class _CubePageState extends State<CubePage> {
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         color: const Color.fromARGB(255, 249, 249, 249),
-        child: ListView(scrollDirection: Axis.vertical, children: [
-          const SizedBox(height: 20),
-          const Text("Masukkan panjang sisi (cm)"),
-          const SizedBox(height: 72),
-          _inputField(),
-          _calcButton(context),
-          _result(),
-          const SizedBox(height: 20)
-        ]),
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+            const SizedBox(height: 20),
+            const Text("Masukkan panjang sisi (cm)"),
+            const SizedBox(height: 72),
+            _inputField(),
+            _calcButton(context),
+            _result(),
+            const SizedBox(height: 20)
+          ],
+        ),
       ),
     );
   }
