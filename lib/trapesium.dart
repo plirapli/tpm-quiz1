@@ -27,6 +27,8 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
         color: const Color.fromARGB(255, 249, 249, 249),
         child: ListView(scrollDirection: Axis.vertical, children: [
           const SizedBox(height: 20),
+          Image.asset("assets/trapesium.png"),
+          const SizedBox(height: 20),
           const Text("Masukkan panjang sisi (cm)"),
           _inputField("Sisi atas", sisiAtas),
           _inputField("Sisi bawah", sisiBawah),
