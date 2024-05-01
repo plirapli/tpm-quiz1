@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_tpm_123210078/cube.dart';
+import 'package:quiz_tpm_123210078/trapesium.dart';
 
 class GeometryPage extends StatelessWidget {
   const GeometryPage({super.key});
@@ -25,10 +26,12 @@ class GeometryPage extends StatelessWidget {
             const SizedBox(height: 6),
             TextButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => page!),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TrapeziumPage(),
+                  ),
+                );
               },
               style: TextButton.styleFrom(
                 backgroundColor: Colors.black,
