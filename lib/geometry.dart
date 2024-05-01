@@ -8,13 +8,7 @@ class GeometryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Trapesium dan Kubus",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-        backgroundColor: Colors.black,
-      ),
+      appBar: AppBar(title: const Text("Trapezium & Cube")),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         color: const Color.fromARGB(255, 249, 249, 249),
@@ -22,7 +16,7 @@ class GeometryPage extends StatelessWidget {
           scrollDirection: Axis.vertical,
           children: [
             const SizedBox(height: 20),
-            const Text("Pilih Menu"),
+            const Text("Choose Menu"),
             const SizedBox(height: 6),
             TextButton(
               onPressed: () {
@@ -33,14 +27,7 @@ class GeometryPage extends StatelessWidget {
                   ),
                 );
               },
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.black,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(6),
-                ),
-              ),
-              child: const Text("Trapesium"),
+              child: const Text("Trapezium"),
             ),
             const SizedBox(height: 8),
             TextButton(
@@ -52,14 +39,7 @@ class GeometryPage extends StatelessWidget {
                   ),
                 );
               },
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.black,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(6),
-                ),
-              ),
-              child: const Text("Kubus"),
+              child: const Text("Cube"),
             ),
             const SizedBox(height: 20)
           ],

@@ -20,14 +20,7 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Kubus",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-        iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.black,
-      ),
+      appBar: AppBar(title: const Text("Trapezium")),
       body: Container(
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -35,7 +28,6 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
         child: ListView(scrollDirection: Axis.vertical, children: [
           const SizedBox(height: 20),
           const Text("Masukkan panjang sisi (cm)"),
-          // const SizedBox(height: 4),
           _inputField("Sisi atas", sisiAtas),
           _inputField("Sisi bawah", sisiBawah),
           _inputField("Sisi miring", sisiMiring),
@@ -68,13 +60,6 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
     return Container(
       padding: const EdgeInsets.only(top: 14, bottom: 6),
       child: TextButton(
-        style: TextButton.styleFrom(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4),
-          ),
-        ),
         onPressed: () {
           String inputSisiAtas = sisiAtas.text;
           String inputSisiBawah = sisiBawah.text;
@@ -101,14 +86,14 @@ class _TrapeziumPageState extends State<TrapeziumPage> {
             });
           }
         },
-        child: const Text('Check'),
+        child: const Text('Hitung'),
       ),
     );
   }
 
   Widget _result() {
     return Container(
-      margin: const EdgeInsets.only(top: 32),
+      margin: const EdgeInsets.only(top: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

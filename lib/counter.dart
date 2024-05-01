@@ -11,19 +11,11 @@ class CounterPage extends StatefulWidget {
 class _CounterPageState extends State<CounterPage> {
   TextEditingController num = TextEditingController();
   String result = "-";
-  String number = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Days Counter",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-        iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.black,
-      ),
+      appBar: AppBar(title: const Text("Days Counter")),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         color: const Color.fromARGB(255, 249, 249, 249),
@@ -31,8 +23,8 @@ class _CounterPageState extends State<CounterPage> {
           scrollDirection: Axis.vertical,
           children: [
             const SizedBox(height: 20),
-            const Text("Masukkan angka dari 1-7"),
-            SizedBox(height: 72),
+            const Text("Enter a number from 1-7 "),
+            const SizedBox(height: 72),
             _inputField(),
             _calcButton(context),
             _result(),
@@ -58,29 +50,19 @@ class _CounterPageState extends State<CounterPage> {
     return Container(
       padding: const EdgeInsets.only(top: 14, bottom: 6),
       child: TextButton(
-        style: TextButton.styleFrom(
-            backgroundColor: Colors.black,
-            foregroundColor: Colors.white,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
         onPressed: () {
-          if (num.text.isNotEmpty) {
-            List<String> hari = [
-              "Senin",
-              "Selasa",
-              "Rabu",
-              "Kamis",
-              "Jumat",
-              "Sabtu",
-              "Minggu"
-            ];
-
-            setState(() {
-              result = hari[int.parse(num.text) - 1];
-            });
-          } else {
-            setState(() => result = "😵");
-          }
+          List<String> hari = [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ];
+          String input = num.text;
+          setState(() =>
+              result = (input.isNotEmpty) ? hari[int.parse(input) - 1] : "-");
         },
         child: const Text('Check'),
       ),
@@ -93,10 +75,7 @@ class _CounterPageState extends State<CounterPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "Result",
-            style: TextStyle(fontSize: 18, height: 0.75),
-          ),
+          const Text("Result", style: TextStyle(fontSize: 18, height: 0.75)),
           Text(
             result,
             style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),

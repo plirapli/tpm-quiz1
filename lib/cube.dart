@@ -9,21 +9,14 @@ class CubePage extends StatefulWidget {
 }
 
 class _CubePageState extends State<CubePage> {
-  TextEditingController num = TextEditingController();
+  TextEditingController sisi = TextEditingController();
   String volume = "-";
   String keliling = "-";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Kubus",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-        iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.black,
-      ),
+      appBar: AppBar(title: const Text("Cube")),
       body: Container(
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -43,7 +36,7 @@ class _CubePageState extends State<CubePage> {
 
   Widget _inputField() {
     return TextField(
-      controller: num,
+      controller: sisi,
       textAlign: TextAlign.center,
       style: const TextStyle(fontSize: 32),
       inputFormatters: <TextInputFormatter>[
@@ -56,29 +49,22 @@ class _CubePageState extends State<CubePage> {
     return Container(
       padding: const EdgeInsets.only(top: 14, bottom: 6),
       child: TextButton(
-        style: TextButton.styleFrom(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4),
-          ),
-        ),
         onPressed: () {
-          String input = num.text;
+          String input = sisi.text;
           if (input.isNotEmpty) {
             double s = double.parse(input);
             setState(() {
-              volume = (s * s * s).toString();
-              keliling = (12 * s).toString();
+              keliling = "${12 * s} cm";
+              volume = "${s * s * s} cm²";
             });
           } else {
             setState(() {
-              volume = "-";
               keliling = "-";
+              volume = "-";
             });
           }
         },
-        child: const Text('Check'),
+        child: const Text('Hitung'),
       ),
     );
   }
@@ -89,21 +75,15 @@ class _CubePageState extends State<CubePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "Volume",
-            style: TextStyle(fontSize: 16, height: 0.75),
-          ),
+          const Text("Keliling"),
           Text(
-            volume,
+            keliling,
             style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 12),
-          const Text(
-            "Keliling",
-            style: TextStyle(fontSize: 16, height: 0.75),
-          ),
+          const Text("Volume"),
           Text(
-            keliling,
+            volume,
             style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
         ],

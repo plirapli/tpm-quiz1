@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_tpm_123210078/theme.dart';
 import 'package:quiz_tpm_123210078/home.dart';
 
 void main() {
@@ -14,12 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Quiz TPM (123210078)',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 70, 216, 189),
-        ),
-        useMaterial3: true,
-      ),
+      theme: themeData(),
       home: const HomePage(),
     );
   }

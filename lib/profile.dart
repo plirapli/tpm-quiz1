@@ -6,14 +6,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Profile",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-        iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.black,
-      ),
+      appBar: AppBar(title: const Text("Profile")),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         color: const Color.fromARGB(255, 249, 249, 249),
@@ -27,7 +20,9 @@ class ProfilePage extends StatelessWidget {
                 color: Colors.black12,
                 borderRadius: BorderRadius.all(Radius.circular(14)),
                 image: DecorationImage(
-                    image: AssetImage("rapli.png"), fit: BoxFit.fitHeight),
+                  image: AssetImage("rapli.png"),
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
             const SizedBox(height: 8),
@@ -35,33 +30,25 @@ class ProfilePage extends StatelessWidget {
               "Muhammad Rafli",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 2),
-            const Row(
-              children: [
-                Icon(Icons.numbers, size: 16),
-                SizedBox(width: 4),
-                Text("123210078"),
-              ],
-            ),
-            const SizedBox(height: 2),
-            const Row(
-              children: [
-                Icon(Icons.class_, size: 16),
-                SizedBox(width: 4),
-                Text("IF-H"),
-              ],
-            ),
-            const SizedBox(height: 2),
-            const Row(
-              children: [
-                Icon(Icons.smart_toy, size: 16),
-                SizedBox(width: 4),
-                Text("Bermain Gim & Mendengarkan Musik"),
-              ],
-            ),
+            biodata("123210078", Icons.numbers),
+            biodata("IF-H", Icons.class_),
+            biodata("Bermain Gim & Mendengarkan Musik", Icons.smart_toy),
             const SizedBox(height: 20)
           ],
         ),
+      ),
+    );
+  }
+
+  Widget biodata(String title, IconData icon) {
+    return Container(
+      margin: const EdgeInsets.only(top: 2),
+      child: Row(
+        children: [
+          Icon(icon, size: 16),
+          const SizedBox(width: 4),
+          Text(title),
+        ],
       ),
     );
   }

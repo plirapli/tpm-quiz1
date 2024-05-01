@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-            color: Color.fromARGB(255, 246, 246, 246),
+            color: const Color.fromARGB(255, 246, 246, 246),
             child: _widgetOptions.elementAt(_selectedIndex)),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
